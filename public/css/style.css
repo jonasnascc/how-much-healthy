@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+body {
+    background-color: #dddddd;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+input, select, option{
+    height: 22px;
+    width: 100px;
+}
+
+.metrics-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 15px 0;
+    gap: 5px;
+}
+
+.metrics-form button {
+    all: unset;
+    cursor: pointer;
+    padding: 8px 1vw;
+    border-radius: 3px;
+    background-color: rgb(11, 80, 228);
+    color: white;
+}
+
+.metrics-form button:hover {
+    background-color: rgb(10, 69, 197);
+}

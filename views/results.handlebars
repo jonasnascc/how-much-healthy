@@ -1,0 +1,7 @@
+<a href="/">go back</a>
+
+{{#if bmi}}<div>Body Mass Index (BMI): {{bmi.value}} ({{bmi.category}})</div>{{/if}}
+{{#if absi}}<div>A Body Shape Index (ABSI): {{absi}}</div>{{/if}}
+{{#if bfp}}<div>Body Fat Percentage (BFP): Between {{bfp.error.min}}% and {{bfp.error.max}}% ({{bfp.category}})</div>{{/if}}
+
+<a href="/login">Log in to save the results</a>

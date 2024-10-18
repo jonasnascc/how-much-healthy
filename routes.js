@@ -1,11 +1,32 @@
 const express = require("express")
 const router = express.Router()
 
-const path = require("path")
-const basePath = path.join(__dirname, "templates")
+const resultsController = require("./controllers/HealthResultsController")
 
 router.get('/', (req, res) => {
-    res.sendFile(`${basePath}/index.html`)
+    res.render('home')
+})
+
+router.post('/results', (req, res) => {
+    const {
+        height,
+        weight,
+        age,
+        gender,
+        waist_circumference
+    } = req.body
+
+    const bmi = resultsController.calculateBMI(height, weight)
+    
+    const output = {
+        bmi,
+        absi: resultsController.calculateABSI(bmi, height, waist_circumference),
+        bfp: resultsController.calculateBFP(bmi, age, gender)
+    }
+
+    console.log()
+
+    res.render('results', output)
 })
 
 module.exports = router
